@@ -1,0 +1,608 @@
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 00:07:29 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 32                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 00:10:15 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 32                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 00:18:29 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 32                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 00:26:06 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 32                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1503585
+INFO:root:FuckGF(
+  (embedding_dict): ParameterDict(
+      (item_emb): Parameter containing: [torch.cuda.FloatTensor of size 8714x64 (cuda:0)]
+      (user_emb): Parameter containing: [torch.cuda.FloatTensor of size 14682x64 (cuda:0)]
+  )
+  (gcn_layers): Sequential(
+    (0): GCNLayer()
+    (1): GCNLayer()
+  )
+  (gt_layers): Sequential(
+    (0): GTLayer()
+  )
+  (pnn_layers): Sequential(
+    (0): PNNLayer(
+      (linear_out_position): Linear(in_features=32, out_features=1, bias=True)
+      (linear_out): Linear(in_features=32, out_features=32, bias=True)
+      (linear_hidden): Linear(in_features=64, out_features=32, bias=True)
+      (act): ReLU()
+    )
+  )
+)
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 00:33:36 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 32                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1503585
+INFO:root:FuckGF(
+  (embedding_dict): ParameterDict(
+      (item_emb): Parameter containing: [torch.cuda.FloatTensor of size 8714x64 (cuda:0)]
+      (user_emb): Parameter containing: [torch.cuda.FloatTensor of size 14682x64 (cuda:0)]
+  )
+  (gcn_layers): Sequential(
+    (0): GCNLayer()
+    (1): GCNLayer()
+  )
+  (gt_layers): Sequential(
+    (0): GTLayer()
+  )
+  (pnn_layers): Sequential(
+    (0): PNNLayer(
+      (linear_out_position): Linear(in_features=32, out_features=1, bias=True)
+      (linear_out): Linear(in_features=32, out_features=32, bias=True)
+      (linear_hidden): Linear(in_features=64, out_features=32, bias=True)
+      (act): ReLU()
+    )
+  )
+)
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 00:42:06 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 32                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1503585
+INFO:root:FuckGF(
+  (embedding_dict): ParameterDict(
+      (item_emb): Parameter containing: [torch.cuda.FloatTensor of size 8714x64 (cuda:0)]
+      (user_emb): Parameter containing: [torch.cuda.FloatTensor of size 14682x64 (cuda:0)]
+  )
+  (gcn_layers): Sequential(
+    (0): GCNLayer()
+    (1): GCNLayer()
+  )
+  (gt_layers): Sequential(
+    (0): GTLayer()
+  )
+  (pnn_layers): Sequential(
+    (0): PNNLayer(
+      (linear_out_position): Linear(in_features=32, out_features=1, bias=True)
+      (linear_out): Linear(in_features=32, out_features=32, bias=True)
+      (linear_hidden): Linear(in_features=64, out_features=32, bias=True)
+      (act): ReLU()
+    )
+  )
+)
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 00:49:28 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 32                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1503585
+INFO:root:FuckGF(
+  (embedding_dict): ParameterDict(
+      (item_emb): Parameter containing: [torch.cuda.FloatTensor of size 8714x64 (cuda:0)]
+      (user_emb): Parameter containing: [torch.cuda.FloatTensor of size 14682x64 (cuda:0)]
+  )
+  (gcn_layers): Sequential(
+    (0): GCNLayer()
+    (1): GCNLayer()
+  )
+  (gt_layers): Sequential(
+    (0): GTLayer()
+  )
+  (pnn_layers): Sequential(
+    (0): PNNLayer(
+      (linear_out_position): Linear(in_features=32, out_features=1, bias=True)
+      (linear_out): Linear(in_features=32, out_features=32, bias=True)
+      (linear_hidden): Linear(in_features=64, out_features=32, bias=True)
+      (act): ReLU()
+    )
+  )
+)
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 00:55:30 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 32                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1503585
+INFO:root:FuckGF(
+  (embedding_dict): ParameterDict(
+      (item_emb): Parameter containing: [torch.cuda.FloatTensor of size 8714x64 (cuda:0)]
+      (user_emb): Parameter containing: [torch.cuda.FloatTensor of size 14682x64 (cuda:0)]
+  )
+  (gcn_layers): Sequential(
+    (0): GCNLayer()
+    (1): GCNLayer()
+  )
+  (gt_layers): Sequential(
+    (0): GTLayer()
+  )
+  (pnn_layers): Sequential(
+    (0): PNNLayer(
+      (linear_out_position): Linear(in_features=32, out_features=1, bias=True)
+      (linear_out): Linear(in_features=32, out_features=32, bias=True)
+      (linear_hidden): Linear(in_features=64, out_features=32, bias=True)
+      (act): ReLU()
+    )
+  )
+)
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 01:03:17 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 32                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1503585
+INFO:root:FuckGF(
+  (embedding_dict): ParameterDict(
+      (item_emb): Parameter containing: [torch.cuda.FloatTensor of size 8714x64 (cuda:0)]
+      (user_emb): Parameter containing: [torch.cuda.FloatTensor of size 14682x64 (cuda:0)]
+  )
+  (gcn_layers): Sequential(
+    (0): GCNLayer()
+    (1): GCNLayer()
+  )
+  (gt_layers): Sequential(
+    (0): GTLayer()
+  )
+  (pnn_layers): Sequential(
+    (0): PNNLayer(
+      (linear_out_position): Linear(in_features=32, out_features=1, bias=True)
+      (linear_out): Linear(in_features=32, out_features=32, bias=True)
+      (linear_hidden): Linear(in_features=64, out_features=32, bias=True)
+      (act): ReLU()
+    )
+  )
+)
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 02:02:09 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 32                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1503585
+INFO:root:FuckGF(
+  (embedding_dict): ParameterDict(
+      (item_emb): Parameter containing: [torch.cuda.FloatTensor of size 8714x64 (cuda:0)]
+      (user_emb): Parameter containing: [torch.cuda.FloatTensor of size 14682x64 (cuda:0)]
+  )
+  (gcn_layers): Sequential(
+    (0): GCNLayer()
+    (1): GCNLayer()
+  )
+  (gt_layers): Sequential(
+    (0): GTLayer()
+  )
+  (pnn_layers): Sequential(
+    (0): PNNLayer(
+      (linear_out_position): Linear(in_features=32, out_features=1, bias=True)
+      (linear_out): Linear(in_features=32, out_features=32, bias=True)
+      (linear_hidden): Linear(in_features=64, out_features=32, bias=True)
+      (act): ReLU()
+    )
+  )
+)
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 02:10:13 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 32                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1503585
+INFO:root:FuckGF(
+  (embedding_dict): ParameterDict(
+      (item_emb): Parameter containing: [torch.cuda.FloatTensor of size 8714x64 (cuda:0)]
+      (user_emb): Parameter containing: [torch.cuda.FloatTensor of size 14682x64 (cuda:0)]
+  )
+  (gcn_layers): Sequential(
+    (0): GCNLayer()
+    (1): GCNLayer()
+  )
+  (gt_layers): Sequential(
+    (0): GTLayer()
+  )
+  (pnn_layers): Sequential(
+    (0): PNNLayer(
+      (linear_out_position): Linear(in_features=32, out_features=1, bias=True)
+      (linear_out): Linear(in_features=32, out_features=32, bias=True)
+      (linear_hidden): Linear(in_features=64, out_features=32, bias=True)
+      (act): ReLU()
+    )
+  )
+)
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 02:14:03 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 32                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
