@@ -572,3 +572,203 @@ INFO:root:Saving top-100 recommendation results to: ../log/FuckGF\FuckGF__Grocer
 INFO:root:test Prediction results saved!
 INFO:root:
 --------------------------------------------- END: 2025-01-17 03:33:23 ---------------------------------------------
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 14:47:16 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 64                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1521984
+INFO:root:FuckGF(
+  (embedding_dict): ParameterDict(
+      (item_emb): Parameter containing: [torch.cuda.FloatTensor of size 8714x64 (cuda:0)]
+      (user_emb): Parameter containing: [torch.cuda.FloatTensor of size 14682x64 (cuda:0)]
+  )
+  (gcn_layers): Sequential(
+    (0): GCNLayer()
+    (1): GCNLayer()
+  )
+  (gt_layers): Sequential(
+    (0): GTLayer()
+  )
+  (pnn_layers): Sequential(
+    (0): PNNLayer(
+      (linear): Linear(in_features=64, out_features=64, bias=True)
+    )
+  )
+)
+INFO:root:Test Before Training: (HR@5:0.0469,NDCG@5:0.0278,HR@10:0.0918,NDCG@10:0.0421,HR@20:0.1836,NDCG@20:0.0651,HR@50:0.5130,NDCG@50:0.1292)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.2247 [53.0 s]	dev=(HR@5:0.3668,NDCG@5:0.2623) [3.6 s] *
+INFO:root:Epoch 2     loss=0.1278 [53.8 s]	dev=(HR@5:0.3625,NDCG@5:0.2627) [3.8 s] *
+INFO:root:Epoch 3     loss=0.0963 [53.2 s]	dev=(HR@5:0.3545,NDCG@5:0.2526) [3.7 s]
+INFO:root:Epoch 4     loss=0.0794 [52.7 s]	dev=(HR@5:0.3532,NDCG@5:0.2524) [3.7 s]
+INFO:root:Epoch 5     loss=0.0684 [53.1 s]	dev=(HR@5:0.3579,NDCG@5:0.2586) [3.7 s]
+INFO:root:Epoch 6     loss=0.0625 [52.9 s]	dev=(HR@5:0.3429,NDCG@5:0.2441) [3.7 s]
+INFO:root:Epoch 7     loss=0.0571 [53.2 s]	dev=(HR@5:0.3433,NDCG@5:0.2442) [3.7 s]
+INFO:root:Epoch 8     loss=0.0531 [53.2 s]	dev=(HR@5:0.3486,NDCG@5:0.2484) [3.7 s]
+INFO:root:Epoch 9     loss=0.0487 [52.7 s]	dev=(HR@5:0.3447,NDCG@5:0.2461) [3.6 s]
+INFO:root:Epoch 10    loss=0.0477 [53.0 s]	dev=(HR@5:0.3407,NDCG@5:0.2445) [3.4 s]
+INFO:root:Epoch 11    loss=0.0440 [52.0 s]	dev=(HR@5:0.3477,NDCG@5:0.2488) [3.8 s]
+INFO:root:Early stop at 11 based on dev result.
+INFO:root:
+Best Iter(dev)=    2	 dev=(HR@5:0.3625,NDCG@5:0.2627) [623.1 s] 
+INFO:root:Load model from ../model/FuckGF/FuckGF__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__n_layers=3__selfloop_flag=False__batch=4096__seed=500__latdim=64__gcn_layer=2__gt_layer=1__pnn_layer=1.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3625,NDCG@5:0.2627,HR@10:0.4714,NDCG@10:0.2979,HR@20:0.5852,NDCG@20:0.3267,HR@50:0.7889,NDCG@50:0.3669)
+INFO:root:
+Test After Training: (HR@5:0.3003,NDCG@5:0.2093,HR@10:0.4105,NDCG@10:0.2450,HR@20:0.5286,NDCG@20:0.2747,HR@50:0.7585,NDCG@50:0.3201)
+INFO:root:Saving top-100 recommendation results to: ../log/FuckGF\FuckGF__Grocery_and_Gourmet_Food__0__lr=0\rec-FuckGF-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/FuckGF\FuckGF__Grocery_and_Gourmet_Food__0__lr=0\rec-FuckGF-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2025-01-17 15:01:23 ---------------------------------------------
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 15:16:18 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 64                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:Namespace(model_name='FuckGF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2025-01-17 15:16:29 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch              | 4096                
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gcn_layer          | 2                   
+ gpu                | 0                   
+ gt_layer           | 1                   
+ l2                 | 0                   
+ latdim             | 64                  
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ pnn_layer          | 1                   
+ random_seed        | 0                   
+ save_final_results | 1                   
+ seed               | 500                 
+ selfloop_flag      | False               
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data/Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1521984
+INFO:root:FuckGF(
+  (embedding_dict): ParameterDict(
+      (item_emb): Parameter containing: [torch.cuda.FloatTensor of size 8714x64 (cuda:0)]
+      (user_emb): Parameter containing: [torch.cuda.FloatTensor of size 14682x64 (cuda:0)]
+  )
+  (gcn_layers): Sequential(
+    (0): GCNLayer()
+    (1): GCNLayer()
+  )
+  (gt_layers): Sequential(
+    (0): GTLayer()
+  )
+  (pnn_layers): Sequential(
+    (0): PNNLayer(
+      (linear): Linear(in_features=64, out_features=64, bias=True)
+    )
+  )
+)
+INFO:root:Test Before Training: (HR@5:0.0469,NDCG@5:0.0278,HR@10:0.0918,NDCG@10:0.0421,HR@20:0.1836,NDCG@20:0.0651,HR@50:0.5130,NDCG@50:0.1292)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.2212 [59.7 s]	dev=(HR@5:0.3654,NDCG@5:0.2603) [4.3 s] *
+INFO:root:Epoch 2     loss=0.1231 [56.5 s]	dev=(HR@5:0.3603,NDCG@5:0.2557) [4.2 s]
+INFO:root:Epoch 3     loss=0.0956 [56.0 s]	dev=(HR@5:0.3598,NDCG@5:0.2576) [3.8 s]
+INFO:root:Epoch 4     loss=0.0792 [58.0 s]	dev=(HR@5:0.3552,NDCG@5:0.2531) [4.2 s]
+INFO:root:Epoch 5     loss=0.0683 [58.6 s]	dev=(HR@5:0.3528,NDCG@5:0.2521) [3.9 s]
+INFO:root:Epoch 6     loss=0.0636 [55.4 s]	dev=(HR@5:0.3530,NDCG@5:0.2531) [4.2 s]
+INFO:root:Epoch 7     loss=0.0588 [58.6 s]	dev=(HR@5:0.3452,NDCG@5:0.2465) [3.8 s]
+INFO:root:Epoch 8     loss=0.0525 [58.1 s]	dev=(HR@5:0.3507,NDCG@5:0.2513) [4.2 s]
+INFO:root:Epoch 9     loss=0.0494 [58.8 s]	dev=(HR@5:0.3467,NDCG@5:0.2494) [4.2 s]
+INFO:root:Epoch 10    loss=0.0486 [57.0 s]	dev=(HR@5:0.3374,NDCG@5:0.2419) [3.5 s]
+INFO:root:Epoch 11    loss=0.0431 [57.0 s]	dev=(HR@5:0.3354,NDCG@5:0.2384) [4.0 s]
+INFO:root:Early stop at 11 based on dev result.
+INFO:root:
+Best Iter(dev)=    1	 dev=(HR@5:0.3654,NDCG@5:0.2603) [678.1 s] 
+INFO:root:Load model from ../model/FuckGF/FuckGF__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__n_layers=3__selfloop_flag=False__batch=4096__seed=500__latdim=64__gcn_layer=2__gt_layer=1__pnn_layer=1.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3654,NDCG@5:0.2603,HR@10:0.4730,NDCG@10:0.2952,HR@20:0.5835,NDCG@20:0.3231,HR@50:0.7922,NDCG@50:0.3643)
+INFO:root:
+Test After Training: (HR@5:0.3007,NDCG@5:0.2067,HR@10:0.4118,NDCG@10:0.2427,HR@20:0.5334,NDCG@20:0.2733,HR@50:0.7583,NDCG@50:0.3177)
+INFO:root:Saving top-100 recommendation results to: ../log/FuckGF\FuckGF__Grocery_and_Gourmet_Food__0__lr=0\rec-FuckGF-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/FuckGF\FuckGF__Grocery_and_Gourmet_Food__0__lr=0\rec-FuckGF-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2025-01-17 15:31:35 ---------------------------------------------

@@ -140,7 +140,39 @@ class FuckGF(GeneralModel):
 
         prediction = (user_embeddings[:, None, :] * item_embeddings).sum(dim=-1)  # [batch_size, -1]
         u_v = user_embeddings.unsqueeze(1).expand(-1, items.shape[1], -1)  # 避免调用 repeat 的性能损耗
-        return {'prediction': prediction.view(feed_dict['batch_size'], -1), 'u_v': u_v, 'i_v': item_embeddings}
+
+        if not is_test:
+            # 构造正负样本
+            pos_user_embeddings = self.data_augmentation(user_embeddings)
+            neg_user_embeddings = self.random_sampling(user_embeddings.size(0), user_embeddings.size(1))
+
+            # 计算对比损失
+            contrastive_loss = self.contrastive_loss(user_embeddings, pos_user_embeddings, neg_user_embeddings)
+
+            return {'prediction': prediction.view(feed_dict['batch_size'], -1), 'u_v': u_v, 'i_v': item_embeddings,
+                    'contrastive_loss': contrastive_loss}
+        else:
+            return {'prediction': prediction.view(feed_dict['batch_size'], -1), 'u_v': u_v, 'i_v': item_embeddings}
+
+    def data_augmentation(self, embeddings):
+        # 示例：节点 dropout
+        dropout_rate = 0.1
+        mask = torch.rand_like(embeddings) > dropout_rate
+        return embeddings * mask
+
+    def random_sampling(self, num_samples, embedding_dim):
+        # 随机采样负样本
+        return torch.randn(num_samples, embedding_dim).to(self.device)
+
+    def contrastive_loss(self, anchor, positive, negative):
+        # 计算 InfoNCE 损失
+        tau = 0.1
+        sim_pos = torch.nn.functional.cosine_similarity(anchor, positive, dim=-1) / tau
+        sim_neg = torch.nn.functional.cosine_similarity(anchor.unsqueeze(1), negative, dim=-1) / tau
+        logits = torch.cat([sim_pos.unsqueeze(1), sim_neg], dim=1)
+        labels = torch.zeros(logits.size(0), dtype=torch.long).to(self.device)
+        loss = torch.nn.functional.cross_entropy(logits, labels)
+        return loss
 
     def init_weights(self, m):
         if isinstance(m, nn.Parameter):

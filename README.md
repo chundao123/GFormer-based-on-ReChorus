@@ -15,7 +15,7 @@
             - FuckGF.py: 复现实现
 
 ## How to use
-运行以下命令：
+在src目录下运行以下命令：
 ```
 python main.py --model_name FuckGF --dataset Grocery_and_Gourmet_Food --num_workers 0
 ```
